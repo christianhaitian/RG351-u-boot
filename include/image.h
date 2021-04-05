@@ -530,7 +530,7 @@ void genimg_print_size(uint32_t size);
 
 #if defined(CONFIG_TIMESTAMP) || defined(CONFIG_CMD_DATE) || \
 	defined(USE_HOSTCC)
-#define IMAGE_ENABLE_TIMESTAMP 0
+#define IMAGE_ENABLE_TIMESTAMP 1
 #else
 #define IMAGE_ENABLE_TIMESTAMP 0
 #endif
