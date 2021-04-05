@@ -75,18 +75,14 @@ static int smbios_string_table_len(char *start)
 
 static int smbios_write_type0(ulong *current, int handle)
 {
-    struct smbios_type0 *t = (struct smbios_type0 *)*current;
-    int len = sizeof(struct smbios_type0);
+	struct smbios_type0 *t = (struct smbios_type0 *)*current;
+	int len = sizeof(struct smbios_type0);
 
-    memset(t, 0, sizeof(struct smbios_type0));
-    fill_smbios_header(t, SMBIOS_BIOS_INFORMATION, len, handle);
-    t->vendor = smbios_add_string(t->eos, "Retro Arena");
-    t->bios_ver = smbios_add_string(t->eos, PLAIN_VERSION);
-    t->bios_release_date = smbios_add_string(t->eos, U_BOOT_DMI_DATE);
-	
-static int smbios_write_type0(ulong *current, int handle)
-{
-
+	memset(t, 0, sizeof(struct smbios_type0));
+	fill_smbios_header(t, SMBIOS_BIOS_INFORMATION, len, handle);
+	t->vendor = smbios_add_string(t->eos, "Retro-Arena");
+	t->bios_ver = smbios_add_string(t->eos, PLAIN_VERSION);
+	t->bios_release_date = smbios_add_string(t->eos, U_BOOT_DMI_DATE);
 #ifdef CONFIG_ROM_SIZE
 	t->bios_rom_size = (CONFIG_ROM_SIZE / 65536) - 1;
 #endif
