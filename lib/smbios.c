@@ -80,7 +80,7 @@ static int smbios_write_type0(ulong *current, int handle)
 
     memset(t, 0, sizeof(struct smbios_type0));
     fill_smbios_header(t, SMBIOS_BIOS_INFORMATION, len, handle);
-    t->vendor = smbios_add_string(t->eos, "Retro-Arena");
+    t->vendor = smbios_add_string(t->eos, "U-Boot");
     t->bios_ver = smbios_add_string(t->eos, PLAIN_VERSION);
     t->bios_release_date = smbios_add_string(t->eos, U_BOOT_DMI_DATE);
 #ifdef CONFIG_ROM_SIZE
