@@ -80,9 +80,9 @@ static int smbios_write_type0(ulong *current, int handle)
 
 	memset(t, 0, sizeof(struct smbios_type0));
 	fill_smbios_header();
-	t->vendor = ""
-	t->bios_ver = ""
-	t->bios_release_date = ""
+	t->vendor = "";
+	t->bios_ver = "";
+	t->bios_release_date = "";
 #ifdef CONFIG_ROM_SIZE
 	t->bios_rom_size = (CONFIG_ROM_SIZE / 65536) - 1;
 #endif
