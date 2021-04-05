@@ -73,8 +73,7 @@ static int smbios_string_table_len(char *start)
 	return len + 1;
 }
 
-static int smbios_write_type0(ulong *current, int handle)
-{
+
 
 #ifdef CONFIG_ROM_SIZE
 	t->bios_rom_size = (CONFIG_ROM_SIZE / 65536) - 1;
