@@ -79,7 +79,7 @@ static int smbios_write_type0(ulong *current, int handle)
 	int len = sizeof(struct smbios_type0);
 
 	memset(t, 0, sizeof(struct smbios_type0));
-	fill_smbios_header();
+        fill_smbios_header(t, SMBIOS_BIOS_INFORMATION, len, handle);
 	t->vendor = "";
 	t->bios_ver = "";
 	t->bios_release_date = "";
